@@ -1,2 +1,19 @@
-# minecraft-coords-saver
-App created in vue js. Use it to save your locations  ( coords ) in your minecraft worlds
+# minecraft-saver-vue
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
