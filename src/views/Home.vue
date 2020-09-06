@@ -2,41 +2,67 @@
     div
         Navbar
         div.container.grid
-            WorldMini( :nombre="'Wololo'"  )
-            WorldMini( :nombre="'Wolol1'"  )
-            WorldMini( :nombre="'Wolol2'"  )
-            WorldMini( :nombre="'Wolol3'"  )
-            WorldCreate
-
+            template(v-for="w in worlds")    
+                WorldMini( :nombre="w.name"  :key="w.id" )
+                
+            WorldCreate( @click.native="showCreate()" )
+            
+        
+        //- https://github.com/euvl/vue-js-modal
+        modal(name="my-first-modal")  
+            form(@submit.prevent="createWorld(nuevoMundo)")
+                h3 Crear nuevo mundo
+                input(placeholder="Mundo. .." v-model="nuevoMundo.name")
+                button(type="submit") Crear
+        
         Footer
 
 </template>
 
-
 <script>
-import Navbar from '@/components/Navbar'
-import WorldMini from '@/components/worlds/WorldMini'
-import WorldCreate from '@/components/worlds/WorldCreate'
-export default {
-    components:{
-        Navbar,
-        WorldMini,
-        WorldCreate
+	import Navbar from "@/components/Navbar"
+	import WorldMini from "@/components/worlds/WorldMini"
+	import WorldCreate from "@/components/worlds/WorldCreate"
 
-    }
-    
-}
+	import { mapActions, mapState } from "vuex"
 
+	export default {
+		data() {
+			return {
+				nuevoMundo: {
+					name: ""
+				}
+			}
+		},
+		components: {
+			Navbar,
+			WorldMini,
+			WorldCreate
+		},
+		mounted() {
+			this.getWorlds()
+		},
+
+		methods: {
+			showCreate() {
+				this.$modal.show("my-first-modal")
+			},
+			...mapActions(["getWorlds", "createWorld"])
+		},
+
+		computed: {
+			...mapState(["worlds"])
+		}
+	}
 </script>
 
 <style lang="sass" scoped>
-    .grid
-        display: grid
-        grid-template-columns: 1fr 1fr
-        row-gap: 15px
-        justify-items: center
+	.grid
+	    display: grid
+	    grid-template-columns: 1fr 1fr
+	    row-gap: 15px
+	    justify-items: center
 
-    .container
-        height: 95%
-
+	.container
+	    height: 95%
 </style>

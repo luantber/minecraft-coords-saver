@@ -12,6 +12,7 @@
     @import '@/assets/sass/variables'
 
     .world-mini
+        cursor: pointer
         // border: solid    
         border-radius: 10px
         width: 130px
