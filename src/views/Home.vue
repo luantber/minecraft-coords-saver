@@ -3,7 +3,7 @@
         Navbar
         div.container.grid
             template(v-for="w in worlds")    
-                WorldMini( :nombre="w.name"  :key="w.id" )
+                WorldMini( :nombre="w.name"  :id="w.id" )
                 
             WorldCreate( @click.native="showCreate()" )
             

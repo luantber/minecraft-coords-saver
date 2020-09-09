@@ -1,13 +1,14 @@
 <template lang="pug">
-    div.world-mini(  :style="{ backgroundImage: `url(${imagen})` }" ) 
-        div
-            h3.title {{nombre}}      
-        div.flex
+    div
+        div.world-mini(  :style="{ backgroundImage: `url(${imagen})` }" @click="open" )
             div
-                span.material-icons share
-                
-            div
-                 span.material-icons delete
+                h3.title {{nombre}}      
+            div.flex
+                div
+                    span.material-icons(@click.stop="share") share
+                    
+                div
+                    span.material-icons(@click.stop="borrar") delete
 
 </template>
 
@@ -18,7 +19,20 @@ export default {
             default: 'http://lorempixel.com/130/100'
         },
         nombre: String,
-        url: String
+        url: String,
+        id: String
+    },
+    methods:{
+        open(){
+            // console.log("abrir")
+            this.$router.push('/worlds/'+this.id)
+        },
+        share(event){
+            console.log("share",event)
+        },
+        borrar(event){
+            console.log("borrar",event)
+        }
     }
         
     
