@@ -7,23 +7,21 @@
 </template>
 
 <script>
-    export default {
-        name: "Navbar"
-    }
+	export default {
+		name: "Navbar"
+	}
 </script>
 
 <style lang="sass" scoped>
-    @import '@/assets/sass/variables'
-    .barra
-        height: 45px
-        background-color: $light
-        margin-bottom: 10px
-        padding-left: 20px
-        padding-right: 20px
-        display: flex
-        justify-content: space-between
-        align-items: center
-        color: $principal
-
-
+	@import '@/assets/sass/variables'
+	.barra
+	    height: 45px
+	    background-color: $light
+	    margin-bottom: 10px
+	    padding-left: 20px
+	    padding-right: 20px
+	    display: flex
+	    justify-content: space-between
+	    align-items: center
+	    color: $principal
 </style>

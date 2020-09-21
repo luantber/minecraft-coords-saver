@@ -2,8 +2,8 @@ import firebase from "firebase/app"
 import router from "../router"
 
 const moduleUser = {
-    actions: {
-        async login(context) {
+	actions: {
+		async login(context) {
 			try {
 				firebase.auth().languageCode = "es"
 				const google_provider = new firebase.auth.GoogleAuthProvider()
@@ -51,8 +51,7 @@ const moduleUser = {
 				context.commit("setUser", { logged: false })
 			}
 		}
-    }
+	}
 }
-
 
 export default moduleUser

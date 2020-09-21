@@ -1,11 +1,8 @@
 import Vue from "vue"
 import Vuex from "vuex"
 
-
-
-
-import moduleUser from './user'
-import moduleWorld from './world'
+import moduleUser from "./user"
+import moduleWorld from "./world"
 
 Vue.use(Vuex)
 
@@ -30,10 +27,8 @@ export default new Vuex.Store({
 			state.locations = payload
 		}
 	},
-	actions: {
-	},
+	actions: {},
 
-		
 	modules: {
 		moduleUser: moduleUser,
 		moduleWorld: moduleWorld

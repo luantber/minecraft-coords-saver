@@ -1,9 +1,8 @@
-import { db, auth } from "../firebase"
-
+import { db } from "../firebase"
 
 const moduleWorld = {
-    actions: {
-        async getWorld(contex, id) {
+	actions: {
+		async getWorld(contex, id) {
 			const snapWorld = await db
 				.collection("worlds")
 				.doc(id)
@@ -25,8 +24,8 @@ const moduleWorld = {
 		},
 
 		/*
-		*  Obtiene los mundos del usuario segun uid 
-		*/
+		 *  Obtiene los mundos del usuario segun uid
+		 */
 		async getWorlds(context) {
 			console.log(context.rootState.user)
 			const collectionWorlds = await db
@@ -35,9 +34,9 @@ const moduleWorld = {
 				.get()
 
 			const worlds = []
-			
+
 			collectionWorlds.forEach((doc) => {
-				worlds.push( { id:doc.id , ...doc.data() } )
+				worlds.push({ id: doc.id, ...doc.data() })
 			})
 
 			context.commit("setWorlds", worlds)
@@ -48,8 +47,7 @@ const moduleWorld = {
 				.collection("worlds")
 				.add({ name: world.name, uid: context.rootState.user.uid })
 		}
-	
-    }
+	}
 }
 
-export default moduleWorld;
+export default moduleWorld

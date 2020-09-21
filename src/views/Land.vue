@@ -18,53 +18,51 @@
 </template>
 
 <script>
-import {mapActions} from 'vuex'
+	import { mapActions } from "vuex"
 
-export default {
-  methods:{
-    ...mapActions(['login']),
-  }
-}
+	export default {
+		methods: {
+			...mapActions(["login"])
+		}
+	}
 </script>
 
+<style lang="sass">
+	@import '@/assets/sass/variables'
 
-<style lang="sass" >
-  @import '@/assets/sass/variables'
+
+	h1
+	  color: $alert
+	  font-size: 14pt
+	p
+	  font-size: 11pt
+
+	.top
+	  display: grid
+	  grid-template-columns: 1fr 3fr
+
+	.logo
+	  align-self: center
+
+	.presentation
+	  width: 180px
+	  margin-top: 20px
+
+	.center
+	  display: flex
+	  flex-direction: column
+	  align-items: center
 
 
-  h1
-    color: $alert
-    font-size: 14pt 
-  p
-    font-size: 11pt
-
-  .top
-    display: grid
-    grid-template-columns: 1fr 3fr
-
-  .logo
-    align-self: center
-
-  .presentation
-    width: 180px
-    margin-top: 20px
-
-  .center
-    display: flex
-    flex-direction: column
-    align-items: center
-
-  
-  .btn 
-    margin-top: 50px
-    width: 130px
-    height: 50px
-    background-color: white
-    border: 0px
-    border-radius: 10px
-    display: flex
-    gap: 10px
-    align-items: center
-    font-size: 9pt
-
+	.btn
+	  margin-top: 50px
+	  width: 130px
+	  height: 50px
+	  background-color: white
+	  border: 0px
+	  border-radius: 10px
+	  display: flex
+	  gap: 10px
+	  align-items: center
+	  font-size: 9pt
 </style>
