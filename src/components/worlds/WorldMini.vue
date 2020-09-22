@@ -2,7 +2,7 @@
     div
         div.world-mini(  :style="{ backgroundImage: `url(${imagen})` }" @click="open" )
             div
-                h3.title {{nombre}}      
+                h3.title {{nombre}}     
             div.flex
                 div
                     span.material-icons(@click.stop="share") share
